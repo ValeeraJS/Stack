@@ -1,0 +1,39 @@
+{
+	"tags": {
+		"allowUnknownTags" : true,
+		"dictionaries": ["jsdoc","closure"]
+	},
+	"source": {
+		"include": [
+            "src/a.js"
+        ],
+		"exclude": [],
+		"includePattern": ".+\\.js(doc|x)?$",
+		"excludePattern": "(^|\\/|\\\\)_"
+	},
+	"opts": {
+		"template": "./template/",
+		"destination": "./doc/",
+		"ignores": ["eg.Component"],
+		"expendsItemMembers": true,
+		"tutorials": "./tutorial"
+	},
+	"plugins": [
+		"./template/plugins/ccc",
+		"./template/plugins/source",
+		"node_modules/jsdoc-custom-tags",
+		"plugins/markdown"
+    ],
+    "templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false,
+		"default": {
+			"outputSourceFiles": false
+        }
+	},
+	"markdown": {
+		"parser": "gfm",
+		"hardwrap": true,
+		"tags": ["examples", "ko"]
+	}
+}
