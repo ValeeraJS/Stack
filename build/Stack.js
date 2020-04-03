@@ -5,7 +5,9 @@
 }(this, (function () { 'use strict';
 
 	const STACK_MAP = new WeakMap();
-	let data = [], tmp = [], i;
+	let data = [];
+	let tmp = [];
+	let i;
 	class Stack {
 	    constructor(items = []) {
 	        STACK_MAP.set(this, []);
@@ -17,7 +19,7 @@
 	    }
 	    push(...elements) {
 	        data = STACK_MAP.get(this);
-	        elements.forEach(item => {
+	        elements.forEach((item) => {
 	            data.push(item);
 	        });
 	        return this;
@@ -42,7 +44,7 @@
 	        return STACK_MAP.get(this).length === 0;
 	    }
 	    toArray() {
-	        return [...(STACK_MAP.get(this))];
+	        return [...STACK_MAP.get(this)];
 	    }
 	}
 

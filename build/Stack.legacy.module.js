@@ -37,7 +37,9 @@ function __spread() {
 }
 
 var STACK_MAP = new WeakMap();
-var data = [], tmp = [], i;
+var data = [];
+var tmp = [];
+var i;
 var Stack = /** @class */ (function () {
     function Stack(items) {
         if (items === void 0) { items = []; }
@@ -80,7 +82,7 @@ var Stack = /** @class */ (function () {
         return STACK_MAP.get(this).length === 0;
     };
     Stack.prototype.toArray = function () {
-        return __spread((STACK_MAP.get(this)));
+        return __spread(STACK_MAP.get(this));
     };
     return Stack;
 }());
