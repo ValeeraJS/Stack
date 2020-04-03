@@ -1,0 +1,2 @@
+# Stack
+Data structure: Stack
